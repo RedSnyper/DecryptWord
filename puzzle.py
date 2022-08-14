@@ -17,7 +17,7 @@ def convert(value: str) -> str:
 def add_hints(word_count: Counter) -> str:
     word_count.pop(' ')  # removing the space count
     hints: List[Tuple[str, int]] = word_count.most_common()[:hint_words]
-    return ','.join([f'{hint[0].capitalize()}->{mapping[hint[0].capitalize()]}' for hint in hints])
+    return ','.join([f'{mapping[hint[0].capitalize()]}->{hint[0].capitalize()}' for hint in hints])
 
 
 with open("orgi.txt") as src:
